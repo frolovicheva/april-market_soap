@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:tns="http://www.flamexander.com/spring/ws/wsproducts"
+        targetNamespace="http://www.flamexander.com/spring/ws/wsproducts" elementFormDefault="qualified">
+
+    <xs:element name="getWSProductByIDRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getAllWSProductsRequest">
+        <xs:complexType/>
+    </xs:element>
+
+    <xs:element name="getWSProductByIDResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="wsproduct" type="tns:wsproduct"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getAllWSProductsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="wsproduct" maxOccurs="unbounded" type="tns:wsproduct"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="wsproduct">
+        <xs:sequence>
+            <xs:element name="id" type="xs:long"/>
+            <xs:element name="title" type="xs:string"/>
+            <xs:element name="price" type="xs:decimal"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

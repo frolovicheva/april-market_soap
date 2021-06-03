@@ -79,3 +79,15 @@ create table order_items (
     created_at                      timestamp default current_timestamp,
     updated_at                      timestamp default current_timestamp
 );
+
+create table wsproducts (
+    id                              bigserial primary key,
+    title                           varchar(255),
+    price                           numeric (8, 2)
+);
+
+insert into wsproducts (title, price)
+values
+('Apple', 50.00),
+('Banana', 30.00),
+('Cherry', 60.00);
