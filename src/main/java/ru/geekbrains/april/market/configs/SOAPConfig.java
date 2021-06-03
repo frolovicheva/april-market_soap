@@ -24,14 +24,14 @@ public class SOAPConfig extends WsConfigurerAdapter {
     }
 
 
-    // http://localhost:8080/ws/students.wsdl
+    // http://localhost:8189/market/ws/wsproducts.wsdl
     @Bean(name = "wsproducts")
-    public DefaultWsdl11Definition studentsWsdl11Definition(XsdSchema studentsSchema) {
+    public DefaultWsdl11Definition wsproductsWsdl11Definition(XsdSchema wsproductsSchema) {
         DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
         wsdl11Definition.setPortTypeName("WSProductPort");
         wsdl11Definition.setLocationUri("/ws");
         wsdl11Definition.setTargetNamespace("http://www.flamexander.com/spring/ws/wsproducts");
-        wsdl11Definition.setSchema (wsproductsSchema ());
+        wsdl11Definition.setSchema (wsproductsSchema);
         return wsdl11Definition;
     }
 
